@@ -12,6 +12,7 @@ public class CallbackService {
         LazopClient client = new LazopClient("https://auth.lazada.com/rest", "100718", "4pcRWwaaRyMeyj86Z87Usv5TsnkmS2LO");
         LazopRequest request = new LazopRequest("/auth/token/create");
         request.addApiParameter("code", authCode);
+        System.out.println("authCode: " + authCode);
         try {
             LazopResponse response = client.execute(request);
             System.out.println(response.getBody());

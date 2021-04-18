@@ -26,6 +26,7 @@ public class CallbackController {
         if (code != null) {
             sb.append(" code: ");
             sb.append(code);
+            callbackService.createLazopAccessToken(code);
         }
         return sb.toString();
     }

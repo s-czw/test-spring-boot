@@ -1,5 +1,6 @@
-package com.test.callback.callback;
+package com.test.callback.callback.controller;
 
+import com.test.callback.callback.service.CallbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

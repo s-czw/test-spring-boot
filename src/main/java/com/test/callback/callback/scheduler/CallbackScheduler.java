@@ -21,7 +21,6 @@ public class CallbackScheduler {
         tomorrow.set(Calendar.MINUTE, 0);
         tomorrow.set(Calendar.SECOND, 0);
         tomorrow.set(Calendar.MILLISECOND, 0);
-        tomorrow.add(Calendar.DAY_OF_MONTH, 1);
         Trigger refreshTokenTrigger = TriggerBuilder.newTrigger()
                 .withIdentity("refreshTokenTrigger")
                 .startAt(tomorrow.getTime())

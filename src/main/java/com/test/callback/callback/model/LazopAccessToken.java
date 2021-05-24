@@ -12,6 +12,7 @@ public class LazopAccessToken {
     @Id
     public String storer;
 
+    // json response parameters
     public String code;
 
     public String country;

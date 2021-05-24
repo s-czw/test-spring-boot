@@ -43,7 +43,9 @@ public class CallbackService {
         System.out.println("authCode: " + authCode);
         try {
             LazopResponse response = client.execute(request);
-            logger.info("-> lazop response: {}", response);
+            logger.info("-----> lazop response type={}, requestId={}", response.getType(), response.getRequestId());
+            logger.info("-----> lazop response code={}, message={}", response.getCode(), response.getMessage());
+            logger.info("-----> lazop response body={}", response.getBody());
 //            storeLazopAccessToken(ANTA_STORER, response.getBody());
         } catch (ApiException e) {
             e.printStackTrace();

@@ -17,7 +17,7 @@ import java.util.Calendar;
 
 @Service
 public class CallbackService {
-    static final Logger logger = LoggerFactory.getLogger(CallbackService.class);
+    final Logger logger = LoggerFactory.getLogger(CallbackService.class);
 
     private final String ANTA_STORER = "ANTA";
 
@@ -43,10 +43,7 @@ public class CallbackService {
         System.out.println("authCode: " + authCode);
         try {
             LazopResponse response = client.execute(request);
-            logger.info("-----> lazop response type={}, requestId={}", response.getType(), response.getRequestId());
-            logger.info("-----> lazop response code={}, message={}", response.getCode(), response.getMessage());
-            logger.info("-----> lazop response body={}", response.getBody());
-//            storeLazopAccessToken(ANTA_STORER, response.getBody());
+            storeLazopAccessToken(ANTA_STORER, response.getBody());
         } catch (ApiException e) {
             e.printStackTrace();
             errorService.handleError(ANTA_STORER, e.getErrorMessage());

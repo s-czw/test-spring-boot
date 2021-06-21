@@ -34,7 +34,7 @@ public class CallbackService {
         this.objectMapper = objectMapper;
         this.errorService = errorService;
         this.repository = repository;
-        this.client = new LazopClient("https://auth.lazada.com/rest", "100718", "4pcRWwaaRyMeyj86Z87Usv5TsnkmS2LO");
+        this.client = new LazopClient("https://auth.lazada.com/rest", "101706", "TGtPSKd51CzhVarKst8pb2Ojc98VPd2u");
     }
 
     public void createLazopAccessToken(String authCode) {
@@ -76,7 +76,7 @@ public class CallbackService {
             cal.add(Calendar.SECOND, (int) (expiration / 60));
             lazopAccessToken.setScheduledRefreshDate(cal.getTime());
             System.out.println(lazopAccessToken);
-            repository.save(lazopAccessToken);
+//            repository.save(lazopAccessToken);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             errorService.handleError(storer, e.getMessage());
